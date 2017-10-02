@@ -71,7 +71,7 @@ class CirclePacker<T where T:PackedView>: NSObject {
     }
     
     func onFrameMove(iterationCounter:CGFloat){
-        self.circles.sortInPlace(sortFunc)
+        //self.circles.sortInPlace(sortFunc)
         
         let minSeparationSq = minSeparation * minSeparation
         
