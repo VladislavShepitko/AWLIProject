@@ -7,133 +7,171 @@
 //
 
 import UIKit
-
-protocol PackedView : Comparable, Equatable {
-    var center: CGPoint {get set}
-    var radius: CGFloat {get set}
+struct BoundsRule : OptionSetType {
+    let rawValue: Int
     
-    init(center:CGPoint, radius:CGFloat)
+    static let WrapX        = BoundsRule(rawValue: 0)
+    static let WrapY        = BoundsRule(rawValue: 1 << 0)
+    static let ConstraintX  = BoundsRule(rawValue: 1 << 1)
+    static let ConstraintY  = BoundsRule(rawValue: 1 << 2)
 }
 
-class CirclePacker<T where T:PackedView>: NSObject {
-    
-    var minSeparation:CGFloat = 10.0
+class CirclePacker<T where T:CircleItem> : NSObject {
     
     private (set) var circles:[T] = []
-    private (set) var center:CGPoint = CGPointZero
-    
-    var dragginCircle:T? = nil {
-        didSet{
-            
-        }
-    }
     var bounds:CGRect = CGRectZero
-    private var circleQueue = dispatch_queue_create("com.awli.packerqueue", DISPATCH_QUEUE_SERIAL)
+    var desiredTarget:CGPoint = CGPointZero
+    var draggedCircle:T?
+    
+    let numOfCertainPass = 1
+    let numOfCollisionPass = 3
     
     override init(){
         super.init()
+        
     }
     
-    convenience init(bounds:CGRect,count:Int, packingCenter:CGPoint, minRadius:CGFloat, maxRadius:CGFloat, factory:((circle:T) -> Void)){
-        self.init()
-        self.generateCircles(bounds, count:count, packingCenter: packingCenter, minRadius: minRadius, maxRadius: maxRadius, factory: factory)
+    func setNewBounds(newBounds:CGRect){
+        bounds = newBounds
+        //desiredTarget = CGPoint(x: newBounds.midX, y: newBounds.midY)
     }
     
-    func generateCircles(bounds:CGRect,count:Int, packingCenter:CGPoint, minRadius:CGFloat, maxRadius:CGFloat, factory:((circle:T) -> Void)){
-        self.bounds = bounds
-        circles.removeAll()
-        center = packingCenter
-        for _ in 0..<count {
-            let newCenter = CGPoint(x: packingCenter.x + CGFloat(Double.random) * minRadius,
-                y: packingCenter.y + CGFloat(Double.random) * minRadius)
-            let radius = minRadius + CGFloat(Double.random) * (maxRadius - minRadius)
+    func addCircle(newCircle:T){
+        var circle = newCircle
+        circles.append(circle)
+        circle.targetPos = desiredTarget
+    }
+    func randomizePositions(){
+        _ = circles.map({ (var circle:T) in
             
-            let circle = T(center: newCenter, radius: radius)
-            self.circles.append(circle)
-            factory(circle: circle)
-        }
-        dragginCircle = circles.first
+            var newPos = CGPointZero
+            
+            newPos.x = CGFloat.random(bounds.minX, upper: bounds.maxX)
+            newPos.y = CGFloat.random(bounds.minY, upper: bounds.maxY)
+            
+            circle.setPos(CGPointZero)
+        })
     }
     
-    func map(closure:(item:T)->Void) {
-        _ = self.circles.map { item in
-            dispatch_barrier_sync(circleQueue) { _ in
-                closure(item: item)
-            }
-        }
-        
-    }
-    private func distanceToCenter(circle:T) -> CGFloat{
-        return  CGPoint.distance(circle.center, end: self.center)
-    }
-    private func sortFunc(f:T, s:T) -> Bool {
-        return distanceToCenter(f) < distanceToCenter(s)
-    }
-    
-    func onFrameMove(iterationCounter:CGFloat){
-        //self.circles.sortInPlace(sortFunc)
-        
-        let minSeparationSq = minSeparation * minSeparation
-        
-        for i in 0...self.circles.count - 1  {
-            for j in i + 1..<self.circles.count {
-                if i == j {
+    func updateForTarget(target:CGPoint){
+        var v = CGPointZero
+        for _ in 0..<numOfCertainPass {
+            let damping:CGFloat = 0.025
+            for var circle in circles {
+                if circle == draggedCircle {
                     continue
                 }
-                
-                var AB = circles[j].center - circles[i].center
-                let r = circles[i].radius - circles[j].radius
-                
-                var d = AB.distanceSquared() - minSeparationSq
-                let minSepSq = min(d, minSeparationSq)
-                d -= minSepSq
-                
-                if d < (r * r) - 0.01 {
-                    AB.normalize()
-                    AB = AB * ((r - sqrt(d)) * 0.5)
-                    if circles[j] != dragginCircle {
-                        circles[j].center = circles[j].center + AB
-                    }
-                    if circles[i] != dragginCircle {
-                        circles[i].center = circles[j].center - AB
-                    }
-                }
-                
+                v.x = circle.pos.x - target.x
+                v.y = circle.pos.y - target.y
+                v = v * damping
+                circle.pos.x -= v.x
+                circle.pos.y -= v.y
             }
         }
-        let damping:CGFloat = 0.1 / CGFloat(iterationCounter)
-        _ = circles.map { [unowned self] (var item) in
-            //if self.inBoundsRect(item) {
-                if item != self.dragginCircle {
-                    var v = item.center - self.center
-                    v = v * damping
-                    UIView.animateWithDuration(0.1, animations: { () -> Void in
-                        item.center = item.center - v
-                    })
-                    //print("center: \(item.center) v:\(v) d:\(damping)")
-                }
-            //}
-        }
     }
-    func inBoundsRect(item:T) -> Bool {
-        if item.center.x < bounds.width  && item.center.x > 0 &&
-           item.center.y < bounds.height && item.center.y > 0
-            {
-            return true
-        }else {
-            return false
+    /**
+    * Packs the circles towards the center of the bounds.
+    * Each circle will have it's own 'targetPosition' later on
+    */
+    func handleCollisions(){
+        var v = CGPointZero
+        for _ in 0..<numOfCollisionPass {
+            for i in 0..<circles.count {
+                var ci = circles[i]
+                for j in i + 1..<circles.count {
+                    var cj = circles[j]
+                    if cj == ci {continue}
+                    
+                    let dx = cj.pos.x - ci.pos.x
+                    let dy = cj.pos.y - ci.pos.y
+                    //The distance between the two circles radii,
+                    let r = (ci.radius.current + cj.radius.current) * 1.08
+                    let d = ci.pos.distanceSquared(cj.pos)
+                    
+                    if d < (r * r) - 0.02 {
+                        v.x = dx
+                        v.y = dy
+                        v.normalize()
+                        
+                        let inverseForce:CGFloat  = (r - sqrt(d)) * 0.5
+                        v = v * inverseForce
+                        if cj != draggedCircle {
+                            if ci == draggedCircle {
+                                v = v * 2.2
+                            }
+                            cj.pos.x = cj.pos.x + v.x
+                            cj.pos.y = cj.pos.y + v.y
+                        }
+                        if ci != draggedCircle {
+                            if cj == draggedCircle {
+                                //Double inverse force to make up for the fact that the other object is fixed
+                                v = v * 2.2
+                            }
+                            ci.pos.x = ci.pos.x + v.x
+                            ci.pos.y = ci.pos.y + v.y
+                        }
+                    }
+                }
+            }
         }
     }
     
-    func selectCircle(location:CGPoint) {
-        self.dragginCircle = nil
-        for circle in circles {
-            let dist = (circle.center - self.center).distanceSquared()
-            if dist < circle.radius * circle.radius {
-                self.dragginCircle = circle
-                return
-            }
+    func handleBoundaryForCircle(inout circle:T, boundsRule:BoundsRule){
+        let r = circle.radius.current
+        let d = r * 2
+        //wrap x
+        if boundsRule.contains(BoundsRule.WrapX) && circle.pos.x - d > bounds.maxX {
+            circle.pos.x = bounds.minX + r
+        }else if boundsRule.contains(BoundsRule.WrapX) && circle.pos.x < bounds.minX {
+            circle.pos.x = bounds.maxX - r
+        }
+        //wrap y
+        if boundsRule.contains(BoundsRule.WrapY) && circle.pos.y - d > bounds.maxY {
+            circle.pos.y = bounds.minY + r
+        }else if boundsRule.contains(BoundsRule.WrapY) && circle.pos.y < bounds.minY {
+            circle.pos.y = bounds.maxY - r
+        }
+        //Constraint x
+        if boundsRule.contains(BoundsRule.ConstraintX) && circle.pos.x + r > bounds.maxX {
+            circle.pos.x = bounds.maxX - r
+        }else if boundsRule.contains(BoundsRule.ConstraintX) && circle.pos.x - r < bounds.minX{
+            circle.pos.x = bounds.minX + r
+        }
+        //Constraint y
+        if boundsRule.contains(BoundsRule.ConstraintY) && circle.pos.y + r > bounds.maxY {
+            circle.pos.y = bounds.maxY - r
+        }else if boundsRule.contains(BoundsRule.ConstraintY) && circle.pos.y - r < bounds.minY{
+            circle.pos.y = bounds.minY + r
         }
     }
+    
+    func setTarget(target:CGPoint){
+        desiredTarget = target
+    }
+    
+    func setDraggedCircle(circle:T?){
+        if draggedCircle != nil && draggedCircle != circle {
+            draggedCircle!.radius.current = draggedCircle!.radius.original
+        }
+        draggedCircle = circle
+    }
+    
+    func grabCircle(at point: CGPoint) -> T? {
+        var value:T? = nil
+        var closestDist = CGFloat.max
+        for circle in circles {
+            let distSq = circle.pos.distanceSquared(point)
+            if distSq < closestDist && distSq < circle.radius.sq {
+                closestDist = distSq
+                value = circle
+            }
+        }
+        if value != nil {
+            setDraggedCircle(value)
+            draggedCircle!.radius.current = draggedCircle!.radius.original * 2.5
+        }
+        return value
+    }
+    
     
 }

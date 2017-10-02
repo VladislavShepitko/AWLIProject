@@ -12,27 +12,27 @@ import ZLSwipeableViewSwift
 class AWLIViewController: UIViewController {
 
     //private (set) var photosView:ZLSwipeableView!
-    private (set) var photosView:PhotosView!
+    //private (set) var photosView:PhotosView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //self.setupPhotosView()
         setupView()
-        photosView.generateViews([UIView(),UIView(),UIView(),UIView()])
+        //photosView.generateViews([UIView(),UIView(),UIView(),UIView()])
         //customize UI
         if revealViewController() != nil {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
     private func setupView(){
-        photosView = PhotosView(frame: CGRectZero)
+        /*photosView = PhotosView(frame: CGRectZero)
         view.addSubview(photosView)
         photosView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addConstraintsWithFormat("V:|-100-[v0]-50-|", views: photosView)
         view.addConstraintsWithFormat("H:|-50-[v0]-50-|", views: photosView)
-        
+        */
     }
     /*
     private func setupPhotosView(){
@@ -102,15 +102,14 @@ class AWLIViewController: UIViewController {
     @IBAction func undo(sender: AnyObject){
         ///self.photosView.rewind()
     }
-    
+    /*
     func nextPhotosView() -> UIView{ 
         
         let photoView = PhotosView(frame: self.view.bounds.insetBy(dx: 20, dy: 50))
         photoView.generateViews([UIView(),UIView(),UIView(),UIView()])
         photoView.backgroundColor = UIColor.clearColor()
         return photoView
-    }
-    
+    }*/
     private func prevPhotoView() -> UIView{
         let photoView = UIView(frame: self.view.bounds.insetBy(dx: 20, dy: 50))
         photoView.backgroundColor = UIColor.Random()

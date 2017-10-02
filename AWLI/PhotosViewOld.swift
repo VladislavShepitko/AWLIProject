@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/*
 class PhotosView: UIView {
  
     private (set) var photosPacker = CirclePacker<CircleView>()
@@ -113,4 +113,4 @@ func !=(x: CircleView, y: CircleView) -> Bool {
 
 func <(x: CircleView, y: CircleView) -> Bool {
     return false
-}
+}*/

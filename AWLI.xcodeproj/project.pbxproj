@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2CAFD1E37D28294E5F6FF04D /* Pods_AWLI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9794981ABB047B073571BA14 /* Pods_AWLI.framework */; };
 		876971AA1F817181001CC5FA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876971A91F817180001CC5FA /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
-		876971AC1F817AE1001CC5FA /* PhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876971AB1F817AE1001CC5FA /* PhotosView.swift */; settings = {ASSET_TAGS = (); }; };
+		876971AC1F817AE1001CC5FA /* PhotosViewOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876971AB1F817AE1001CC5FA /* PhotosViewOld.swift */; settings = {ASSET_TAGS = (); }; };
 		8775B5C31F7500250094823C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8775B5C21F7500250094823C /* AppDelegate.swift */; };
 		8775B5C51F7500250094823C /* AWLIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8775B5C41F7500250094823C /* AWLIViewController.swift */; };
 		8775B5C81F7500260094823C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8775B5C61F7500260094823C /* Main.storyboard */; };
@@ -22,7 +22,10 @@
 		8775B5EB1F75814A0094823C /* AWLIWebService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8775B5E31F7581480094823C /* AWLIWebService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8775B5F11F7587BF0094823C /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8775B5F01F7587BF0094823C /* SetupViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8775B5F31F758B610094823C /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8775B5F21F758B610094823C /* IntroViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		87CA45271F82404A0097EA32 /* CirclePacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CA45261F82404A0097EA32 /* CirclePacker.swift */; settings = {ASSET_TAGS = (); }; };
+		87CA45271F82404A0097EA32 /* CirclePackerOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CA45261F82404A0097EA32 /* CirclePackerOld.swift */; settings = {ASSET_TAGS = (); }; };
+		87CA452A1F82BDCC0097EA32 /* CirclePacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CA45291F82BDCC0097EA32 /* CirclePacker.swift */; settings = {ASSET_TAGS = (); }; };
+		87CA452C1F82BDEF0097EA32 /* CircleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CA452B1F82BDEF0097EA32 /* CircleItem.swift */; settings = {ASSET_TAGS = (); }; };
+		87CA452E1F82DAB80097EA32 /* CirclesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CA452D1F82DAB80097EA32 /* CirclesView.swift */; settings = {ASSET_TAGS = (); }; };
 		92AF7683A9AEC03627C76C9A /* Pods_AWLIWebService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D518D7E2842936364F0662D2 /* Pods_AWLIWebService.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +57,7 @@
 		1A4D067586DA85AD4790D10F /* Pods-AWLI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWLI.release.xcconfig"; path = "Pods/Target Support Files/Pods-AWLI/Pods-AWLI.release.xcconfig"; sourceTree = "<group>"; };
 		809A81540C04D5060926E5FD /* Pods-AWLIWebService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWLIWebService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AWLIWebService/Pods-AWLIWebService.debug.xcconfig"; sourceTree = "<group>"; };
 		876971A91F817180001CC5FA /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		876971AB1F817AE1001CC5FA /* PhotosView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosView.swift; sourceTree = "<group>"; };
+		876971AB1F817AE1001CC5FA /* PhotosViewOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewOld.swift; sourceTree = "<group>"; };
 		8775B5BF1F7500250094823C /* AWLI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AWLI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8775B5C21F7500250094823C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8775B5C41F7500250094823C /* AWLIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWLIViewController.swift; sourceTree = "<group>"; };
@@ -71,7 +74,10 @@
 		8775B5E71F7581490094823C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8775B5F01F7587BF0094823C /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		8775B5F21F758B610094823C /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
-		87CA45261F82404A0097EA32 /* CirclePacker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirclePacker.swift; sourceTree = "<group>"; };
+		87CA45261F82404A0097EA32 /* CirclePackerOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirclePackerOld.swift; sourceTree = "<group>"; };
+		87CA45291F82BDCC0097EA32 /* CirclePacker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirclePacker.swift; sourceTree = "<group>"; };
+		87CA452B1F82BDEF0097EA32 /* CircleItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleItem.swift; sourceTree = "<group>"; };
+		87CA452D1F82DAB80097EA32 /* CirclesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirclesView.swift; sourceTree = "<group>"; };
 		881A063C29A93A12514868E0 /* Pods-AWLI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWLI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AWLI/Pods-AWLI.debug.xcconfig"; sourceTree = "<group>"; };
 		9794981ABB047B073571BA14 /* Pods_AWLI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AWLI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB28A68DD6B7C1BBD4A2122 /* Pods-AWLIWebService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWLIWebService.release.xcconfig"; path = "Pods/Target Support Files/Pods-AWLIWebService/Pods-AWLIWebService.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,13 +140,14 @@
 		8775B5D41F7500380094823C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				87CA45281F82BDAF0097EA32 /* CirclePaker */,
 				8775B5DB1F752EDF0094823C /* SWRevealViewController.h */,
 				8775B5DC1F752EDF0094823C /* SWRevealViewController.m */,
 				8775B5CE1F7500260094823C /* Info.plist */,
 				8775B5C21F7500250094823C /* AppDelegate.swift */,
 				8775B5DA1F752EDE0094823C /* AWLI-Bridging-Header.h */,
 				876971A91F817180001CC5FA /* Extensions.swift */,
-				87CA45261F82404A0097EA32 /* CirclePacker.swift */,
+				87CA45261F82404A0097EA32 /* CirclePackerOld.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -160,7 +167,8 @@
 			children = (
 				8775B5C61F7500260094823C /* Main.storyboard */,
 				8775B5CB1F7500260094823C /* LaunchScreen.storyboard */,
-				876971AB1F817AE1001CC5FA /* PhotosView.swift */,
+				876971AB1F817AE1001CC5FA /* PhotosViewOld.swift */,
+				87CA452D1F82DAB80097EA32 /* CirclesView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -180,6 +188,15 @@
 				8775B5E71F7581490094823C /* Info.plist */,
 			);
 			path = AWLIWebService;
+			sourceTree = "<group>";
+		};
+		87CA45281F82BDAF0097EA32 /* CirclePaker */ = {
+			isa = PBXGroup;
+			children = (
+				87CA45291F82BDCC0097EA32 /* CirclePacker.swift */,
+				87CA452B1F82BDEF0097EA32 /* CircleItem.swift */,
+			);
+			name = CirclePaker;
 			sourceTree = "<group>";
 		};
 		D2739FE8DB63B92D07633963 /* Frameworks */ = {
@@ -399,15 +416,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87CA452E1F82DAB80097EA32 /* CirclesView.swift in Sources */,
 				8775B5D81F7500B20094823C /* Model.swift in Sources */,
 				8775B5C51F7500250094823C /* AWLIViewController.swift in Sources */,
-				87CA45271F82404A0097EA32 /* CirclePacker.swift in Sources */,
+				87CA45271F82404A0097EA32 /* CirclePackerOld.swift in Sources */,
 				8775B5C31F7500250094823C /* AppDelegate.swift in Sources */,
 				876971AA1F817181001CC5FA /* Extensions.swift in Sources */,
 				8775B5F31F758B610094823C /* IntroViewController.swift in Sources */,
-				876971AC1F817AE1001CC5FA /* PhotosView.swift in Sources */,
+				876971AC1F817AE1001CC5FA /* PhotosViewOld.swift in Sources */,
 				8775B5DD1F752EDF0094823C /* SWRevealViewController.m in Sources */,
 				8775B5F11F7587BF0094823C /* SetupViewController.swift in Sources */,
+				87CA452C1F82BDEF0097EA32 /* CircleItem.swift in Sources */,
+				87CA452A1F82BDCC0097EA32 /* CirclePacker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

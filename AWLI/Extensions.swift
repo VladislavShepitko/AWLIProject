@@ -80,6 +80,12 @@ public extension CGPoint {
         let yDist = end.y - start.y
         return CGFloat(sqrt((xDist * xDist) + (yDist * yDist)))
     }
+    public func distanceSquared(t:CGPoint) -> CGFloat {
+        let xDist = self.x - t.x
+        let yDist = self.y - t.y
+        return CGFloat((xDist * xDist) + (yDist * yDist))
+    }
+    
     public func distanceSquared() -> CGFloat {
         return x * x + y * y
     }
