@@ -1,0 +1,640 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2CAFD1E37D28294E5F6FF04D /* Pods_AWLI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9794981ABB047B073571BA14 /* Pods_AWLI.framework */; };
+		876971AA1F817181001CC5FA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876971A91F817180001CC5FA /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
+		876971AC1F817AE1001CC5FA /* PhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876971AB1F817AE1001CC5FA /* PhotosView.swift */; settings = {ASSET_TAGS = (); }; };
+		8775B5C31F7500250094823C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8775B5C21F7500250094823C /* AppDelegate.swift */; };
+		8775B5C51F7500250094823C /* AWLIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8775B5C41F7500250094823C /* AWLIViewController.swift */; };
+		8775B5C81F7500260094823C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8775B5C61F7500260094823C /* Main.storyboard */; };
+		8775B5CA1F7500260094823C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8775B5C91F7500260094823C /* Assets.xcassets */; };
+		8775B5CD1F7500260094823C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8775B5CB1F7500260094823C /* LaunchScreen.storyboard */; };
+		8775B5D81F7500B20094823C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8775B5D71F7500B20094823C /* Model.swift */; settings = {ASSET_TAGS = (); }; };
+		8775B5DD1F752EDF0094823C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8775B5DC1F752EDF0094823C /* SWRevealViewController.m */; settings = {ASSET_TAGS = (); }; };
+		8775B5E61F7581490094823C /* AWLIWebService.h in Headers */ = {isa = PBXBuildFile; fileRef = 8775B5E51F7581490094823C /* AWLIWebService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8775B5EA1F7581490094823C /* AWLIWebService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8775B5E31F7581480094823C /* AWLIWebService.framework */; };
+		8775B5EB1F75814A0094823C /* AWLIWebService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8775B5E31F7581480094823C /* AWLIWebService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8775B5F11F7587BF0094823C /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8775B5F01F7587BF0094823C /* SetupViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8775B5F31F758B610094823C /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8775B5F21F758B610094823C /* IntroViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		87CA45271F82404A0097EA32 /* CirclePacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CA45261F82404A0097EA32 /* CirclePacker.swift */; settings = {ASSET_TAGS = (); }; };
+		92AF7683A9AEC03627C76C9A /* Pods_AWLIWebService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D518D7E2842936364F0662D2 /* Pods_AWLIWebService.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8775B5E81F7581490094823C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8775B5B71F7500250094823C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8775B5E21F7581480094823C;
+			remoteInfo = AWLIWebService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8775B5EF1F75814A0094823C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8775B5EB1F75814A0094823C /* AWLIWebService.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1A4D067586DA85AD4790D10F /* Pods-AWLI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWLI.release.xcconfig"; path = "Pods/Target Support Files/Pods-AWLI/Pods-AWLI.release.xcconfig"; sourceTree = "<group>"; };
+		809A81540C04D5060926E5FD /* Pods-AWLIWebService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWLIWebService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AWLIWebService/Pods-AWLIWebService.debug.xcconfig"; sourceTree = "<group>"; };
+		876971A91F817180001CC5FA /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		876971AB1F817AE1001CC5FA /* PhotosView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosView.swift; sourceTree = "<group>"; };
+		8775B5BF1F7500250094823C /* AWLI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AWLI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8775B5C21F7500250094823C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8775B5C41F7500250094823C /* AWLIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWLIViewController.swift; sourceTree = "<group>"; };
+		8775B5C71F7500260094823C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8775B5C91F7500260094823C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8775B5CC1F7500260094823C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8775B5CE1F7500260094823C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8775B5D71F7500B20094823C /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		8775B5DA1F752EDE0094823C /* AWLI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AWLI-Bridging-Header.h"; sourceTree = "<group>"; };
+		8775B5DB1F752EDF0094823C /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		8775B5DC1F752EDF0094823C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		8775B5E31F7581480094823C /* AWLIWebService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AWLIWebService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8775B5E51F7581490094823C /* AWLIWebService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWLIWebService.h; sourceTree = "<group>"; };
+		8775B5E71F7581490094823C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8775B5F01F7587BF0094823C /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		8775B5F21F758B610094823C /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		87CA45261F82404A0097EA32 /* CirclePacker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirclePacker.swift; sourceTree = "<group>"; };
+		881A063C29A93A12514868E0 /* Pods-AWLI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWLI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AWLI/Pods-AWLI.debug.xcconfig"; sourceTree = "<group>"; };
+		9794981ABB047B073571BA14 /* Pods_AWLI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AWLI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEB28A68DD6B7C1BBD4A2122 /* Pods-AWLIWebService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWLIWebService.release.xcconfig"; path = "Pods/Target Support Files/Pods-AWLIWebService/Pods-AWLIWebService.release.xcconfig"; sourceTree = "<group>"; };
+		D518D7E2842936364F0662D2 /* Pods_AWLIWebService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AWLIWebService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8775B5BC1F7500250094823C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8775B5EA1F7581490094823C /* AWLIWebService.framework in Frameworks */,
+				2CAFD1E37D28294E5F6FF04D /* Pods_AWLI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8775B5DF1F7581480094823C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92AF7683A9AEC03627C76C9A /* Pods_AWLIWebService.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8775B5B61F7500250094823C = {
+			isa = PBXGroup;
+			children = (
+				8775B5C11F7500250094823C /* AWLI */,
+				8775B5E41F7581480094823C /* AWLIWebService */,
+				8775B5C01F7500250094823C /* Products */,
+				F9CEDA8DF54FC275BC2ABEFE /* Pods */,
+				D2739FE8DB63B92D07633963 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8775B5C01F7500250094823C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8775B5BF1F7500250094823C /* AWLI.app */,
+				8775B5E31F7581480094823C /* AWLIWebService.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8775B5C11F7500250094823C /* AWLI */ = {
+			isa = PBXGroup;
+			children = (
+				8775B5C91F7500260094823C /* Assets.xcassets */,
+				8775B5D41F7500380094823C /* Common */,
+				8775B5D51F75008B0094823C /* Controller */,
+				8775B5D61F7500940094823C /* View */,
+				8775B5D91F7500B80094823C /* Model */,
+			);
+			path = AWLI;
+			sourceTree = "<group>";
+		};
+		8775B5D41F7500380094823C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8775B5DB1F752EDF0094823C /* SWRevealViewController.h */,
+				8775B5DC1F752EDF0094823C /* SWRevealViewController.m */,
+				8775B5CE1F7500260094823C /* Info.plist */,
+				8775B5C21F7500250094823C /* AppDelegate.swift */,
+				8775B5DA1F752EDE0094823C /* AWLI-Bridging-Header.h */,
+				876971A91F817180001CC5FA /* Extensions.swift */,
+				87CA45261F82404A0097EA32 /* CirclePacker.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		8775B5D51F75008B0094823C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8775B5C41F7500250094823C /* AWLIViewController.swift */,
+				8775B5F01F7587BF0094823C /* SetupViewController.swift */,
+				8775B5F21F758B610094823C /* IntroViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		8775B5D61F7500940094823C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8775B5C61F7500260094823C /* Main.storyboard */,
+				8775B5CB1F7500260094823C /* LaunchScreen.storyboard */,
+				876971AB1F817AE1001CC5FA /* PhotosView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8775B5D91F7500B80094823C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8775B5D71F7500B20094823C /* Model.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8775B5E41F7581480094823C /* AWLIWebService */ = {
+			isa = PBXGroup;
+			children = (
+				8775B5E51F7581490094823C /* AWLIWebService.h */,
+				8775B5E71F7581490094823C /* Info.plist */,
+			);
+			path = AWLIWebService;
+			sourceTree = "<group>";
+		};
+		D2739FE8DB63B92D07633963 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9794981ABB047B073571BA14 /* Pods_AWLI.framework */,
+				D518D7E2842936364F0662D2 /* Pods_AWLIWebService.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9CEDA8DF54FC275BC2ABEFE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				881A063C29A93A12514868E0 /* Pods-AWLI.debug.xcconfig */,
+				1A4D067586DA85AD4790D10F /* Pods-AWLI.release.xcconfig */,
+				809A81540C04D5060926E5FD /* Pods-AWLIWebService.debug.xcconfig */,
+				BEB28A68DD6B7C1BBD4A2122 /* Pods-AWLIWebService.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8775B5E01F7581480094823C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8775B5E61F7581490094823C /* AWLIWebService.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8775B5BE1F7500250094823C /* AWLI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8775B5D11F7500260094823C /* Build configuration list for PBXNativeTarget "AWLI" */;
+			buildPhases = (
+				0FED31343EB2F92B9D643FD6 /* [CP] Check Pods Manifest.lock */,
+				8775B5BB1F7500250094823C /* Sources */,
+				8775B5BC1F7500250094823C /* Frameworks */,
+				8775B5BD1F7500250094823C /* Resources */,
+				8775B5EF1F75814A0094823C /* Embed Frameworks */,
+				7831F2004583D12850CB9CA0 /* [CP] Embed Pods Frameworks */,
+				C36ACBCF33B597699094ABA5 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8775B5E91F7581490094823C /* PBXTargetDependency */,
+			);
+			name = AWLI;
+			productName = AWLI;
+			productReference = 8775B5BF1F7500250094823C /* AWLI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8775B5E21F7581480094823C /* AWLIWebService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8775B5EC1F75814A0094823C /* Build configuration list for PBXNativeTarget "AWLIWebService" */;
+			buildPhases = (
+				33422F25054C06A7CE8BA7E8 /* [CP] Check Pods Manifest.lock */,
+				8775B5DE1F7581480094823C /* Sources */,
+				8775B5DF1F7581480094823C /* Frameworks */,
+				8775B5E01F7581480094823C /* Headers */,
+				8775B5E11F7581480094823C /* Resources */,
+				171203FEB5926149CB926FB9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AWLIWebService;
+			productName = AWLIWebService;
+			productReference = 8775B5E31F7581480094823C /* AWLIWebService.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8775B5B71F7500250094823C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Vladyslav Shepitko";
+				TargetAttributes = {
+					8775B5BE1F7500250094823C = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					8775B5E21F7581480094823C = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 52R582CQR2;
+					};
+				};
+			};
+			buildConfigurationList = 8775B5BA1F7500250094823C /* Build configuration list for PBXProject "AWLI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8775B5B61F7500250094823C;
+			productRefGroup = 8775B5C01F7500250094823C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8775B5BE1F7500250094823C /* AWLI */,
+				8775B5E21F7581480094823C /* AWLIWebService */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8775B5BD1F7500250094823C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8775B5CD1F7500260094823C /* LaunchScreen.storyboard in Resources */,
+				8775B5CA1F7500260094823C /* Assets.xcassets in Resources */,
+				8775B5C81F7500260094823C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8775B5E11F7581480094823C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0FED31343EB2F92B9D643FD6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		171203FEB5926149CB926FB9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AWLIWebService/Pods-AWLIWebService-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		33422F25054C06A7CE8BA7E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7831F2004583D12850CB9CA0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AWLI/Pods-AWLI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C36ACBCF33B597699094ABA5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AWLI/Pods-AWLI-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8775B5BB1F7500250094823C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8775B5D81F7500B20094823C /* Model.swift in Sources */,
+				8775B5C51F7500250094823C /* AWLIViewController.swift in Sources */,
+				87CA45271F82404A0097EA32 /* CirclePacker.swift in Sources */,
+				8775B5C31F7500250094823C /* AppDelegate.swift in Sources */,
+				876971AA1F817181001CC5FA /* Extensions.swift in Sources */,
+				8775B5F31F758B610094823C /* IntroViewController.swift in Sources */,
+				876971AC1F817AE1001CC5FA /* PhotosView.swift in Sources */,
+				8775B5DD1F752EDF0094823C /* SWRevealViewController.m in Sources */,
+				8775B5F11F7587BF0094823C /* SetupViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8775B5DE1F7581480094823C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8775B5E91F7581490094823C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8775B5E21F7581480094823C /* AWLIWebService */;
+			targetProxy = 8775B5E81F7581490094823C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8775B5C61F7500260094823C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8775B5C71F7500260094823C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8775B5CB1F7500260094823C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8775B5CC1F7500260094823C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8775B5CF1F7500260094823C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8775B5D01F7500260094823C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8775B5D21F7500260094823C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 881A063C29A93A12514868E0 /* Pods-AWLI.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = AWLI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SVApps.TacTac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AWLI/AWLI-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8775B5D31F7500260094823C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A4D067586DA85AD4790D10F /* Pods-AWLI.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = AWLI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SVApps.TacTac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AWLI/AWLI-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8775B5ED1F75814A0094823C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 809A81540C04D5060926E5FD /* Pods-AWLIWebService.debug.xcconfig */;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AWLIWebService/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SVApps.AWLIWebService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8775B5EE1F75814A0094823C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEB28A68DD6B7C1BBD4A2122 /* Pods-AWLIWebService.release.xcconfig */;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AWLIWebService/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SVApps.AWLIWebService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8775B5BA1F7500250094823C /* Build configuration list for PBXProject "AWLI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8775B5CF1F7500260094823C /* Debug */,
+				8775B5D01F7500260094823C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8775B5D11F7500260094823C /* Build configuration list for PBXNativeTarget "AWLI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8775B5D21F7500260094823C /* Debug */,
+				8775B5D31F7500260094823C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8775B5EC1F75814A0094823C /* Build configuration list for PBXNativeTarget "AWLIWebService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8775B5ED1F75814A0094823C /* Debug */,
+				8775B5EE1F75814A0094823C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8775B5B71F7500250094823C /* Project object */;
+}
